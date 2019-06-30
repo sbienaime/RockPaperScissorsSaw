@@ -69,18 +69,22 @@ public static void StartComponent(int component_Number){
 
     switch( component_Number ) {
         case 1:
+
+
             for(int i=0; i<3;i++) {
+               int Round =i+1;
+                System.out.println("----------- Round "+Round+" ---------------");
                 newGame.startGame();
                 newGame.checkPlayerWep(P1);
                 newGame.checkPlayerWep(P2);
                 Game.checkPlayerWep(cpu, cpu.CpuMove());
-                System.out.println(cpu.getWeapon());
                 newGame.checkWinner(cpu, P1, 1);
                 newGame.checkWinner(cpu, P2, 2);
             }
+            newGame.checkGameWinner(P1,P2);
 
-            P1.stats.showStatistics();
-            P2.stats.showStatistics();
+            P1.stats.showStatistics(false);
+            P2.stats.showStatistics(true);
 
 
             break;
@@ -90,7 +94,7 @@ public static void StartComponent(int component_Number){
             break;
         case 3:
             Statistics stats =new Statistics();
-            stats.showStatistics();
+            stats.showStatistics(true);
             break;
         case 4:
             exitGame();

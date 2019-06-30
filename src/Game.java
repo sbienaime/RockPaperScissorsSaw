@@ -192,6 +192,28 @@ public String  checkWinner(Player cpu, Player player, int p_number ) {
 return cpu_wep;
 }
 
+public void checkGameWinner(Player p1,Player p2){
+
+
+    if(p1.stats.getWinsForCurentGame()> p2.stats.getWinsForCurentGame()){
+        p1.stats.updateStatistics("wg");
+        p2.stats.updateStatistics("lg");
+
+
+    }
+    else if (p1.stats.getWinsForCurentGame()< p2.stats.getWinsForCurentGame()){
+
+        p1.stats.updateStatistics("lg");
+        p2.stats.updateStatistics("wg"); }
+    else{
+
+        p1.stats.updateStatistics("tg");
+        p2.stats.updateStatistics("tg"); }
+
+    p1.stats.updateStatistics("rg");
+    p2.stats.updateStatistics("rg");
+
+}
 
 
 }
