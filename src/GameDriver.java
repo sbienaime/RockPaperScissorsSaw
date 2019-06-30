@@ -54,10 +54,10 @@ public class GameDriver {
         }
 
 
-        newMenu.OpenMenu();
+            newMenu.OpenMenu();
 
 
-
+        //P1.stats.updateStatistics("wr");
 
 
     }
@@ -100,6 +100,21 @@ public static void StartComponent(int component_Number){
     }
 
 
+
+
+    public static Player getPlayer(int player_number)
+
+    {
+        if(player_number==2) {
+
+            return P1;
+        }
+        else{
+
+            return P2;
+        }
+
+    }
 
 }
 

@@ -19,9 +19,7 @@ public class Player {
     return Weapon;
   }
 
-  public void setStats(Statistics stats) {
-    this.stats = stats;
-  }
+
 
   public void setWeapon(String weapon) {
     Weapon = weapon;

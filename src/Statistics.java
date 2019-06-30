@@ -19,9 +19,44 @@ public class Statistics {
 
 
 
-    public void updateStatistics(String name , String action ){
+    public void updateStatistics(String action ){
+        //position 1: stores wins
+        //position 2: stores losses
+        //position 3: stores ties
+    
+
+        //wr: means won round
+
+        if (action =="wg"){
+            Games_won++;
+        }
+        else if (action =="lg"){
+            Games_lost++;
+        }
+        else{  Games_tied++; }
 
 
+        if (action =="wr"){
+
+
+         Rounds_won++;
+
+         }
+
+        else if (action =="lr"){
+
+
+            Rounds_lost++;
+
+        }
+
+
+        if (action =="tr"){
+
+
+            Rounds_tied++;
+
+        }
 
 
         return;

@@ -95,18 +95,7 @@ public  static void checkPlayerWep(Player player){
             w.toLowerCase().replace("\\s+", "");
             }
 }
-
-
-
-
 }
-
-
-
-
-
-
-
 
 
 public static  void printWeapon(String name,String wep ){
@@ -115,4 +104,43 @@ System.out.println(name+" selected "+wep);
 
 
 }
+
+
+public void  checkWinner(Player cpu, Player player, int p_number ){
+
+   String cpu_wep = cpu.getWeapon();
+   String player_wep= player.getWeapon();
+   String player_name=player.getName();
+   String cpuName =player.getName();
+if (cpu_wep=="rock"){
+    if (player_wep != "paper"){
+
+       System.out.println(player_name+" lost.");
+       GameDriver.getPlayer(p_number).stats.updateStatistics("lr");
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 }
