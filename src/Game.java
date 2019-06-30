@@ -106,40 +106,105 @@ System.out.println(name+" selected "+wep);
 }
 
 
-public void  checkWinner(Player cpu, Player player, int p_number ){
+public String  checkWinner(Player cpu, Player player, int p_number ) {
 
-   String cpu_wep = cpu.getWeapon();
-   String player_wep= player.getWeapon();
-   String player_name=player.getName();
-   String cpuName =player.getName();
-if (cpu_wep=="rock"){
-    if (player_wep != "paper"){
+    String cpu_wep = cpu.getWeapon();
+    String player_wep = player.getWeapon();
+    String player_name = player.getName();
+    String cpuName = player.getName();
+    if (cpu_wep.contentEquals("rock")) {
+        if (!player_wep.contentEquals("paper") && !player_wep.contentEquals("rock")) {
 
-       System.out.println(player_name+" lost.");
-       GameDriver.getPlayer(p_number).stats.updateStatistics("lr");
+            System.out.println(player_name + " lost.");
+            GameDriver.getPlayer(p_number).stats.updateStatistics("lr");
+
+        } else if (player_wep.contentEquals("paper")) {
+
+            System.out.println(player_name + " won.");
+            GameDriver.getPlayer(p_number).stats.updateStatistics("wr");
+
+        }
+    }
+
+    //
+    if (cpu_wep.contentEquals(player_wep)) {
+
+        System.out.println(player_name + " is tied with CPU");
+        GameDriver.getPlayer(p_number).stats.updateStatistics("tr");
+    }
+
+
+    if (cpu_wep == "paper") {
+
+        if (!player_wep.contentEquals("rock") && !player_wep.contentEquals("paper")) {
+
+
+            System.out.println(player_name + " won.");
+            GameDriver.getPlayer(p_number).stats.updateStatistics("wr");
+
+
+        } else if (player_wep.contentEquals("rock")) {
+
+
+            System.out.println(player_name + " lost.");
+            GameDriver.getPlayer(p_number).stats.updateStatistics("lr");
+
+        }
+    }
+
+    if (cpu_wep.contentEquals("scissors")) {
+
+
+        if (player_wep.contentEquals("rock") || player_wep.contentEquals("saw")) {
+
+
+            System.out.println(player_name + " won.");
+            GameDriver.getPlayer(p_number).stats.updateStatistics("wr");
+
+        } else if (player_name.contentEquals("paper")) {
+            System.out.println(player_name + " lost.");
+            GameDriver.getPlayer(p_number).stats.updateStatistics("lr");
+        }
 
     }
 
+
+ if(cpu_wep.contentEquals("saw"))
+
+    {
+
+        if (player_wep.contentEquals("rock")) {
+
+
+            System.out.println(player_name + " won.");
+            GameDriver.getPlayer(p_number).stats.updateStatistics("wr");
+
+        } else if (player_wep.contentEquals("paper") || player_wep.contentEquals("scissors")) {
+
+            System.out.println(player_name + " lost.");
+            GameDriver.getPlayer(p_number).stats.updateStatistics("lr");
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return cpu_wep;
 }
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
 
 
 

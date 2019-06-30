@@ -69,10 +69,15 @@ public static void StartComponent(int component_Number){
 
     switch( component_Number ) {
         case 1:
-            newGame.startGame();
-            newGame.checkPlayerWep(P1);
-            newGame.checkPlayerWep(P2);
-            Game.checkPlayerWep(cpu,cpu.CpuMove());
+            for(int i=0; i<3;i++) {
+                newGame.startGame();
+                newGame.checkPlayerWep(P1);
+                newGame.checkPlayerWep(P2);
+                Game.checkPlayerWep(cpu, cpu.CpuMove());
+                System.out.println(cpu.getWeapon());
+                newGame.checkWinner(cpu, P1, 1);
+                newGame.checkWinner(cpu, P2, 2);
+            }
             break;
         case 2:
             Rules rules = new Rules();

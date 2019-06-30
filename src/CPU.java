@@ -15,7 +15,7 @@ public CPU(String name){
 }
 public String CpuMove(){
 
-    int wep_number =CpuWepGenerator.nextInt(4)+1;
+    int wep_number=CpuWepGenerator.nextInt(4)+1;
 
     switch(wep_number) {
         case 1:

@@ -23,7 +23,7 @@ public class Statistics {
         //position 1: stores wins
         //position 2: stores losses
         //position 3: stores ties
-    
+
 
         //wr: means won round
 
