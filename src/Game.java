@@ -169,38 +169,24 @@ public String  checkWinner(Player cpu, Player player, int p_number ) {
     }
 
 
- if(cpu_wep.contentEquals("saw"))
+ if(cpu_wep.contentEquals("saw")) {
 
-    {
-
-        if (player_wep.contentEquals("rock")) {
+     if (player_wep.contentEquals("rock")) {
 
 
-            System.out.println(player_name + " won.");
-            GameDriver.getPlayer(p_number).stats.updateStatistics("wr");
+         System.out.println(player_name + " won.");
+         GameDriver.getPlayer(p_number).stats.updateStatistics("wr");
 
-        } else if (player_wep.contentEquals("paper") || player_wep.contentEquals("scissors")) {
+     } else if (player_wep.contentEquals("paper") || player_wep.contentEquals("scissors")) {
 
-            System.out.println(player_name + " lost.");
-            GameDriver.getPlayer(p_number).stats.updateStatistics("lr");
-
-
-        }
+         System.out.println(player_name + " lost.");
+         GameDriver.getPlayer(p_number).stats.updateStatistics("lr");
 
 
-    }
+     }
 
 
-
-
-
-
-
-
-
-
-
-
+ }
 
 
 return cpu_wep;

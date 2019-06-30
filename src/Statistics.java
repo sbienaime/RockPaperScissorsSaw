@@ -10,9 +10,20 @@ public class Statistics {
 
 
 
+    public String setPlayerName(String name){
+        this.player_name=name;
+        return name;
+    }
+
+
 
     public void showStatistics() {
-
+        System.out.println(player_name+" won "+ Games_won+" games.");
+        System.out.println(player_name+" won "+ Rounds_won+" rounds.");
+        System.out.println(player_name+" lost "+ Games_lost+" games.");
+        System.out.println(player_name+" lost "+ Rounds_lost+" rounds.");
+        System.out.println(player_name+" tied "+ Games_tied+" games.");
+        System.out.println(player_name+" tied "+ Rounds_tied+" rounds.");
         Menu.OpenMenu();
         return;
     }

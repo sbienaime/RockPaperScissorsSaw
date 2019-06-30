@@ -78,6 +78,11 @@ public static void StartComponent(int component_Number){
                 newGame.checkWinner(cpu, P1, 1);
                 newGame.checkWinner(cpu, P2, 2);
             }
+
+            P1.stats.showStatistics();
+            P2.stats.showStatistics();
+
+
             break;
         case 2:
             Rules rules = new Rules();
@@ -110,7 +115,7 @@ public static void StartComponent(int component_Number){
     public static Player getPlayer(int player_number)
 
     {
-        if(player_number==2) {
+        if(player_number==1) {
 
             return P1;
         }
