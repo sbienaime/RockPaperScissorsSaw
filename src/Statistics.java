@@ -20,44 +20,22 @@ public class Statistics {
         this.player_name=name;
         return name;
     }
-//#
-    public static  void CheckGameWinner(Player p1,  Player p2){
 
-        if (p1.stats.Rounds_won_currentGame==p2.stats.Rounds_won_currentGame){
+    public static void viewStatistics (Player p1, Player p2 ){
 
+        p1.stats.showStatistics(false);
+        p2.stats.showStatistics(true);
 
-            p1.stats.updateStatistics("tg");
-            p2.stats.updateStatistics("tg");
-
-        }
-
-        if (p1.stats.Rounds_won_currentGame> p2.stats.Rounds_won_currentGame )
-        {
-
-
-            p1.stats.updateStatistics("wg");
-            p2.stats.updateStatistics("lg");
-        }
-        else if (p1.stats.Rounds_won_currentGame<p2.stats.Rounds_won_currentGame){
-
-
-            p1.stats.updateStatistics("lg");
-            p2.stats.updateStatistics("wg");
-
-        }
-
-        p1.stats.updateStatistics("rg");
 
     }
-
     public void showStatistics(boolean callmenu) {
-        System.out.println("------------ "+player_name+"Statistics---------------");
-        System.out.println(player_name+" won "+ Games_won+" games.");
-        System.out.println(player_name+" won "+ Rounds_won+" rounds.");
-        System.out.println(player_name+" lost "+ Games_lost+" games.");
-        System.out.println(player_name+" lost "+ Rounds_lost+" rounds.");
-        System.out.println(player_name+" tied "+ Games_tied+" games.");
-        System.out.println(player_name+" tied "+ Rounds_tied+" rounds.");
+        System.out.println("------------- "+player_name+"'s Statistics---------------");
+        System.out.println(player_name+" won "+ Games_won+" game(s).");
+        System.out.println(player_name+" won "+ Rounds_won+" round(s).");
+        System.out.println(player_name+" lost "+ Games_lost+" game(s).");
+        System.out.println(player_name+" lost "+ Rounds_lost+" round(s).");
+        System.out.println(player_name+" tied "+ Games_tied+" game(s).");
+        System.out.println(player_name+" tied "+ Rounds_tied+" round(s).");
 
         if (callmenu) {
             Menu.OpenMenu();
@@ -84,7 +62,7 @@ public class Statistics {
         else if (action =="lg"){
             Games_lost++;
         }
-        else if(action=="td") {  Games_tied++; }
+        else if(action=="tg") {  Games_tied++; }
 
 
         if (action =="wr"){

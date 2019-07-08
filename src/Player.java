@@ -1,8 +1,7 @@
 public class Player {
 
-
-
   String Name;
+
   Statistics stats = new Statistics();
   public String Weapon;
 
@@ -30,20 +29,5 @@ public class Player {
     stats.setPlayerName(name);
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

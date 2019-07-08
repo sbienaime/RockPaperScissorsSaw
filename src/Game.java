@@ -11,7 +11,7 @@ static Scanner input = new Scanner(System.in);
 
 public void startGame(){
 
-System.out.println("Choose your weapon by typing Rock, Paper, Scissors, or Saw into the console and pressing enter ");
+System.out.println("Choose your weapon by typing rock, paper, scissors, or saw into the console and pressing enter ");
 
 
 return ;
@@ -62,7 +62,7 @@ public  static void checkPlayerWep(Player player){
     String p=player.getName();
     System.out.println(p+" please chose your weapon");
     String w =input.nextLine();
-    w.toLowerCase().replace("\\s+", "");
+    w.toLowerCase().replaceAll("\\s+", "");
 
     boolean notvalidated=true;
 
@@ -90,9 +90,9 @@ public  static void checkPlayerWep(Player player){
             notvalidated=false;
             break;
         default:
-            System.out.println("Please make a valid menu selection. Try again.");
+            System.out.println("Please make a valid weapon selection. Try again.");
             w =input.nextLine();
-            w.toLowerCase().replace("\\s+", "");
+            w.toLowerCase().replaceAll("\\s+", "");
             }
 }
 }
@@ -212,7 +212,7 @@ public void checkGameWinner(Player p1,Player p2){
 
     p1.stats.updateStatistics("rg");
     p2.stats.updateStatistics("rg");
-
+    Menu.OpenMenu();
 }
 
 

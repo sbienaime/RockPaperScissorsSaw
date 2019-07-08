@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -6,9 +7,13 @@ public class Menu {
     static Statistics stats= new Statistics();
 
 
-    public static int OpenMenu() {
+    public static String OpenMenu() {
+        System.out.println("---------------------Menu-----------------------");
         System.out.println("1. Play game"+"\n"+ "2. Show game rules"+"\n"+ "3. Show statistics"+"\n"+ "4. Exit");
-        int choice = input.nextInt();
+
+
+
+        String choice = input.nextLine();
         GetSelection(choice);
         return choice;
     }
@@ -16,23 +21,23 @@ public class Menu {
 
 
 
-    public static int GetSelection(int component){
+    public static String GetSelection(String component){
 
 
         switch(component) {
-            case 1:
+            case "1":
                 GameDriver.StartComponent(component);
-               return 1;
+               return "1";
 
-            case 2:
+            case "2":
                 GameDriver.StartComponent(component);
-                return 2;
-            case 3:
+                return "2";
+            case "3":
                 GameDriver.StartComponent(component);
-                return 3;
-            case 4:
+                return "3";
+            case "4":
                 GameDriver.StartComponent(component);
-                return 4;
+                return "4";
             default:
                 System.out.println("Please make a valid menu selection. Thank you");
                 component=GetSelection(OpenMenu());
@@ -47,10 +52,6 @@ public class Menu {
      return component ;
     }
 
-    public static void exitGame(){
-        System.out.println("Good Bye");
-        return;
-    }
 
 
 }
